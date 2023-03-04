@@ -45,4 +45,25 @@ public class Trendyol {
 
     @FindBy(xpath = "(//*[@class='price-promotion-container'])[1]")
     public WebElement firstItem;
+
+    @FindBy(xpath = "//*[text()='Giriş Yap']")
+    public WebElement SignIn;
+
+    @FindBy(xpath = "//*[@class='signup-button']")
+    public WebElement SignUp;
+
+    @FindBy(id = "register-email")
+    public WebElement registerEmail;
+
+    @FindBy(id = "register-password-input")
+    public WebElement registerPasswordInput;
+
+    @FindBy(xpath = "(//span[text()='Erkek'])[2]")
+    public WebElement maleSelect;
+    @FindBy(xpath = "(//*[@class='ty-mgr-2 ty-relative ty-checkbox-container'])[2]")
+    public WebElement checkboxAgree;
+
+
+    @FindBy(xpath = "//*[@class='q-primary q-fluid q-button-medium q-button submit']")
+    public WebElement registerButton;
 }
