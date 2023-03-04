@@ -18,4 +18,22 @@ public class Trendyol {
 
     @FindBy (className = "dscrptn")
     public WebElement SearchResults;
+
+    @FindBy(xpath = "(//a[text()='Elektronik'])[2]")
+    public WebElement elektronik;
+
+    @FindBy(xpath = "//span[text()='Laptop&Tablet']")
+    public WebElement computerAndTablet;
+
+    @FindBy(xpath = "//div[text()='ASUS']")
+    public WebElement ASUS;
+
+    @FindBy(xpath = "//div[text()='Fiyat']")
+    public WebElement price;
+
+    @FindBy(xpath = "//input[@class='fltr-srch-prc-rng-input max']")
+    public WebElement maxPriceTextBox;
+
+    @FindBy(xpath = "//button[@class='fltr-srch-prc-rng-srch']")
+    public WebElement priceButton;
 }
