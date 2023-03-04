@@ -1,12 +1,13 @@
 package tests;
 
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.Trendyol;
 import utilities.ConfigReader;
 import utilities.Driver;
-import utilities.ReusableMethods;
+
+import static utilities.ReusableMethods.bekle;
 
 public class smokeTest2 {
     Actions actions = new Actions(Driver.getDriver());
@@ -18,26 +19,45 @@ public class smokeTest2 {
         trendyol.cookiesAccept.click();
 
 
-
-
         // elektronik kategorisinden Bilgisayar ve tablet bolumunu secer
         actions.click(trendyol.elektronik).perform();
 
         trendyol.computerAndTablet.click();
         // filtrelemede asus secer
+        //actions.sendKeys(Keys.F5).perform();
+        bekle(3);
         trendyol.ASUS.click();
 
         //fiyat yazisina tiklar
         actions = new Actions(Driver.getDriver());
         actions.scrollToElement(trendyol.price).perform();
-        ReusableMethods.bekle(3000);
+        bekle(3);
         trendyol.price.click();
-        ReusableMethods.bekle(3000);
+        bekle(3);
+        //Max fiyat 20000 olarak girer
         trendyol.maxPriceTextBox.sendKeys("20000");
         trendyol.priceButton.click();
 
         String actual =trendyol.SearchResults.getText();
-        System.out.println(actual);
+
+        // Bulunan sonucların Asus icerdigini dogrulayin
+        String expResult=  "ASUS";
+        Assert.assertTrue(actual.contains(expResult));
+
+        // Bulunan sonucların 20000 tl altinda old. dogrulayın
+        bekle(3);
+        trendyol.priceOption.click();
+        bekle(2);
+
+        trendyol.priceMax.click();
+        double actualPrice=Double.parseDouble(trendyol.firstItem.getText().replaceAll("TL",""));
+
+        Assert.assertTrue(actualPrice<20000);
+
+
+
+
+
     }
 }
 

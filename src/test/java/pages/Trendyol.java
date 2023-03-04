@@ -36,4 +36,13 @@ public class Trendyol {
 
     @FindBy(xpath = "//button[@class='fltr-srch-prc-rng-srch']")
     public WebElement priceButton;
+
+    @FindBy(xpath = "//*[@class='sort-fltr-cntnr']")
+    public WebElement priceOption;
+
+    @FindBy(xpath = "//option[@value='PRICE_BY_DESC']")
+    public WebElement priceMax;
+
+    @FindBy(xpath = "(//*[@class='price-promotion-container'])[1]")
+    public WebElement firstItem;
 }
