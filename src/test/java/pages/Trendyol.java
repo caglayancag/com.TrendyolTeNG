@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -66,4 +67,32 @@ public class Trendyol {
 
     @FindBy(xpath = "//*[@class='q-primary q-fluid q-button-medium q-button submit']")
     public WebElement registerButton;
+
+    @FindBy (xpath = "//*[@class='q-primary q-fluid q-button-medium q-button submit']")
+    public WebElement   userSignIn;
+
+    @FindBy(id = "login-email")
+    public WebElement  loginEmail;
+
+    @FindBy(id = "login-password-input")
+    public WebElement loginPasswordInput;
+
+    @FindBy (xpath = "//*[@class='link account-user']")
+    public WebElement   MyAccountLink;
+
+    @FindBy(xpath = "(//li[@class='tab-link'])[8]")
+    public WebElement ElectronicsLink;
+
+    @FindBy(xpath = "//a[@href='href=\"/bilgisayar-tablet-aksesuar-x-c104568\"']")
+    public WebElement ComputerAccesuary;
+
+    @FindBy (xpath = "(//button[@class='add-to-basket'])[1]")
+    public WebElement addToBasketButton;
+
+    @FindBy (xpath = "//p[text()='Sepetim']")
+    public WebElement MyBasket;
+
+    @FindBy(xpath="//div[@class='image-container']")
+    public WebElement randomItemSelect;
+
 }

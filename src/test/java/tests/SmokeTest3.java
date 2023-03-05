@@ -23,7 +23,6 @@ public class SmokeTest3 {
         trendyol.cookiesAccept.click();
 
         // Kayıt ol Butonuna tıkla
-
         Actions actions=new Actions(Driver.getDriver());
 
         actions.moveToElement(trendyol.SignIn).perform();
@@ -39,8 +38,6 @@ public class SmokeTest3 {
         actions.sendKeys(Keys.PAGE_DOWN).perform();
 
         ReusableMethods.bekle(2);
-
-      // trendyol.maleSelect.click();
 
         trendyol.checkboxAgree.click();
 
